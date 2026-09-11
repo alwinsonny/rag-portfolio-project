@@ -1,0 +1,22 @@
+{
+  "source": "openFDA drug/label",
+  "export_date": "2026-09-09",
+  "total_records_available": 262757,
+  "partitions_available": 14,
+  "partitions_downloaded": 2,
+  "files": [
+    {
+      "file": "drug-label-0001-of-0014.json.zip",
+      "url": "https://download.open.fda.gov/drug/label/drug-label-0001-of-0014.json.zip",
+      "records_in_file": 20000,
+      "size_mb": "130.55"
+    },
+    {
+      "file": "drug-label-0002-of-0014.json.zip",
+      "url": "https://download.open.fda.gov/drug/label/drug-label-0002-of-0014.json.zip",
+      "records_in_file": 20000,
+      "size_mb": "142.97"
+    }
+  ],
+  "note": "Data courtesy of the U.S. Food and Drug Administration. The FDA does not endorse this tool. Public domain."
+}

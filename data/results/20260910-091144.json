@@ -1,0 +1,62 @@
+{
+  "label": "baseline: fixed 800 chunks, dense only",
+  "timestamp": "20260910-091144",
+  "questions": 2,
+  "config": {
+    "chunk_strategy": "fixed",
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "enriched": false,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense"
+    ],
+    "reranker": null
+  },
+  "metrics": {
+    "recall@1": 0.0,
+    "mrr@1": 0.0,
+    "ndcg@1": 0.0,
+    "recall@5": 0.0,
+    "mrr@5": 0.0,
+    "ndcg@5": 0.0,
+    "recall@10": 0.0,
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "recall@20": 0.0,
+    "mrr@20": 0.0,
+    "ndcg@20": 0.0,
+    "recall@50": 0.0,
+    "mrr@50": 0.0,
+    "ndcg@50": 0.0
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.0,
+      "mrr@10": 0.0,
+      "ndcg@10": 0.0
+    },
+    "ALL": {
+      "recall@10": 0.0,
+      "mrr@10": 0.0,
+      "ndcg@10": 0.0
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "which medicine used for fever",
+      "first_relevant_rank": null,
+      "top_hit": "LEVOFLOXACIN [af4b7333] \u2014 all"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "paracetamol",
+      "first_relevant_rank": null,
+      "top_hit": "HYDROCODONE BITARTRATE AND ACETAMINOPHEN [4d5bfd3a] \u2014 all"
+    }
+  ]
+}

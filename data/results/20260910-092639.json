@@ -1,0 +1,76 @@
+{
+  "label": "baseline: fixed 800 chunks, dense only",
+  "timestamp": "20260910-092639",
+  "questions": 4,
+  "config": {
+    "chunk_strategy": "fixed",
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "enriched": false,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense"
+    ],
+    "reranker": null
+  },
+  "metrics": {
+    "recall@1": 0.25,
+    "mrr@1": 0.25,
+    "ndcg@1": 0.25,
+    "recall@5": 0.25,
+    "mrr@5": 0.25,
+    "ndcg@5": 0.25,
+    "recall@10": 0.25,
+    "mrr@10": 0.25,
+    "ndcg@10": 0.25,
+    "recall@20": 0.25,
+    "mrr@20": 0.25,
+    "ndcg@20": 0.25,
+    "recall@50": 0.5,
+    "mrr@50": 0.26,
+    "ndcg@50": 0.3031865133883408
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.25,
+      "mrr@10": 0.25,
+      "ndcg@10": 0.25
+    },
+    "ALL": {
+      "recall@10": 0.25,
+      "mrr@10": 0.25,
+      "ndcg@10": 0.25
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "usage of citalopram",
+      "first_relevant_rank": 25,
+      "top_hit": "CITALOPRAM HYDROBROMIDE [c577b306] \u2014 all"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "side effects of INDOCIN",
+      "first_relevant_rank": 1,
+      "top_hit": "INDOMETHACIN [73878376] \u2014 all"
+    },
+    {
+      "id": "g-003",
+      "type": "direct_lookup",
+      "question": "side effects of Schizophrenia",
+      "first_relevant_rank": null,
+      "top_hit": "ARIPIPRAZOLE [b47ede68] \u2014 all"
+    },
+    {
+      "id": "g-004",
+      "type": "direct_lookup",
+      "question": "how to avoid abuse drugs like tramadol hydrochloride tablets",
+      "first_relevant_rank": null,
+      "top_hit": "TRAMADOL HCL [b4cd4b64] \u2014 all"
+    }
+  ]
+}

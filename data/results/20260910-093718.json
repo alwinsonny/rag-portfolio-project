@@ -1,0 +1,198 @@
+{
+  "label": "baseline: fixed 800 chunks, dense only",
+  "timestamp": "20260910-093718",
+  "questions": 20,
+  "config": {
+    "chunk_strategy": "fixed",
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "enriched": false,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense"
+    ],
+    "reranker": null
+  },
+  "metrics": {
+    "recall@1": 0.05,
+    "mrr@1": 0.05,
+    "ndcg@1": 0.05,
+    "recall@5": 0.25,
+    "mrr@5": 0.11416666666666667,
+    "ndcg@5": 0.14742295594396962,
+    "recall@10": 0.4,
+    "mrr@10": 0.13345238095238093,
+    "ndcg@10": 0.19520953059319732,
+    "recall@20": 0.5,
+    "mrr@20": 0.14025062656641604,
+    "ndcg@20": 0.22029034897255126,
+    "recall@50": 0.6,
+    "mrr@50": 0.14376577808156757,
+    "ndcg@50": 0.24075573326186056
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.25,
+      "mrr@10": 0.25,
+      "ndcg@10": 0.25
+    },
+    "named_entity": {
+      "recall@10": 0.625,
+      "mrr@10": 0.17113095238095238,
+      "ndcg@10": 0.27853412228893965
+    },
+    "paraphrase": {
+      "recall@10": 0.25,
+      "mrr@10": 0.037500000000000006,
+      "ndcg@10": 0.08448970419405369
+    },
+    "ALL": {
+      "recall@10": 0.4,
+      "mrr@10": 0.13345238095238093,
+      "ndcg@10": 0.19520953059319732
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "usage of citalopram",
+      "first_relevant_rank": 25,
+      "top_hit": "CITALOPRAM HYDROBROMIDE [c577b306] \u2014 all"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "side effects of INDOCIN",
+      "first_relevant_rank": 1,
+      "top_hit": "INDOMETHACIN [73878376] \u2014 all"
+    },
+    {
+      "id": "g-003",
+      "type": "direct_lookup",
+      "question": "side effects of Schizophrenia",
+      "first_relevant_rank": null,
+      "top_hit": "ARIPIPRAZOLE [b47ede68] \u2014 all"
+    },
+    {
+      "id": "g-004",
+      "type": "direct_lookup",
+      "question": "how to avoid abuse drugs like tramadol hydrochloride tablets",
+      "first_relevant_rank": null,
+      "top_hit": "TRAMADOL HCL [b4cd4b64] \u2014 all"
+    },
+    {
+      "id": "g-005",
+      "type": "named_entity",
+      "question": "How many clinical trials and patients were included in the pooled analyses of antidepressants for children, adolescents, and adults?",
+      "first_relevant_rank": null,
+      "top_hit": "QUETIAPINE FUMARATE [aeff3ab1] \u2014 all"
+    },
+    {
+      "id": "g-006",
+      "type": "named_entity",
+      "question": "What blood-related adverse events are linked to antipsychotic medications like aripiprazole (OPIPZA)?",
+      "first_relevant_rank": 2,
+      "top_hit": "ARIPIPRAZOLE [b47ede68] \u2014 all"
+    },
+    {
+      "id": "g-007",
+      "type": "named_entity",
+      "question": "What adverse reactions (such as headache and nausea) are commonly reported by patients taking valacyclovir for genital herpes?",
+      "first_relevant_rank": 4,
+      "top_hit": "VALACYCLOVIR [b713ebfb] \u2014 all"
+    },
+    {
+      "id": "g-008",
+      "type": "named_entity",
+      "question": "How does inhibiting the renin-angiotensin-aldosterone system affect renal function in susceptible individuals taking enalapril maleate?",
+      "first_relevant_rank": 19,
+      "top_hit": "ENALAPRIL MALEATE [0ad4bfb4] \u2014 all"
+    },
+    {
+      "id": "g-009",
+      "type": "named_entity",
+      "question": "What are the physical appearance, color, shape, and imprint markings of the 1-gram valacyclovir tablets?",
+      "first_relevant_rank": 3,
+      "top_hit": "VALSARTAN [5ddba454] \u2014 all"
+    },
+    {
+      "id": "g-010",
+      "type": "named_entity",
+      "question": ") when drugs like famotidine, ritonavir, or tenofovir DF are administered simultaneously or at staggered schedules?What precautions and medical observation protocols (such as supervision duration and blood pressure stabilization checks) are required following the initial dose of enalapril?",
+      "first_relevant_rank": 7,
+      "top_hit": "ENALAPRIL MALEATE [0ad4bfb4] \u2014 all"
+    },
+    {
+      "id": "g-011",
+      "type": "named_entity",
+      "question": "What are the preparation, shelf-life limits, and post-administration hydration instructions for the oral suspension?",
+      "first_relevant_rank": 33,
+      "top_hit": "OSELTAMIVIR PHOSPHATE [91eadf0b] \u2014 all"
+    },
+    {
+      "id": "g-012",
+      "type": "named_entity",
+      "question": "How does food intake affect the absorption and extent of absorption of DRSP and EE?",
+      "first_relevant_rank": 7,
+      "top_hit": "DROSPIRENONE AND ETHINYL ESTRADIOL [9b1f944b] \u2014 all"
+    },
+    {
+      "id": "g-013",
+      "type": "paraphrase",
+      "question": "Why are alternative measurements like corrected serum calcium (CSC) often used instead of ionized calcium to diagnose and follow hypercalcemic conditions?",
+      "first_relevant_rank": null,
+      "top_hit": "ZOLEDRONIC ACID [20cd29cc] \u2014 all"
+    },
+    {
+      "id": "g-014",
+      "type": "paraphrase",
+      "question": "Is levofloxacin excreted in human milk, and what are the recommendations for mothers who are breastfeeding?",
+      "first_relevant_rank": 12,
+      "top_hit": "LEVOFLOXACIN [cbd5153f] \u2014 all"
+    },
+    {
+      "id": "g-015",
+      "type": "paraphrase",
+      "question": "How does renal impairment affect drug clearance, and is individualization of dosing recommended?",
+      "first_relevant_rank": null,
+      "top_hit": "LACOSAMIDE [7ed5cebe] \u2014 all"
+    },
+    {
+      "id": "g-016",
+      "type": "paraphrase",
+      "question": "How should a concomitant enzyme-inducing anti-epileptic drug (AED) be systematically withdrawn over time?",
+      "first_relevant_rank": 10,
+      "top_hit": "OXCARBAZEPINE [4ebcb0e5] \u2014 all"
+    },
+    {
+      "id": "g-017",
+      "type": "paraphrase",
+      "question": "What are the neonatal risks (such as neonatal opioid withdrawal syndrome, respiratory depression, and psycho-physiologic effects) when opioids cross the placenta?What are the neonatal risks (such as neonatal opioid withdrawal syndrome, resp",
+      "first_relevant_rank": null,
+      "top_hit": "MORPHINE SULFATE [ad08cd86] \u2014 all"
+    },
+    {
+      "id": "g-018",
+      "type": "paraphrase",
+      "question": "What statistical threshold or stopping boundary (such as the O'Brien Fleming boundary) was used to define statistical significance for the study analyses?",
+      "first_relevant_rank": null,
+      "top_hit": "TADALAFIL [0a9cf85a] \u2014 all"
+    },
+    {
+      "id": "g-019",
+      "type": "paraphrase",
+      "question": "What are the mean changes in serum ferritin and liver iron concentration (LIC) over time in patients with MDS treated with deferasirox tablets for oral suspension beyond 1 year?",
+      "first_relevant_rank": 5,
+      "top_hit": "DEFERASIROX [485c4834] \u2014 all"
+    },
+    {
+      "id": "g-020",
+      "type": "paraphrase",
+      "question": "What are the incidence rates of clinically significant shifts in lipid levels (such as total cholesterol, triglycerides, LDL-cholesterol, and HDL-cholesterol) in children and adolescents treated with quetiapine versus placebo?",
+      "first_relevant_rank": null,
+      "top_hit": "QUETIAPINE [c6e25a58] \u2014 all"
+    }
+  ]
+}

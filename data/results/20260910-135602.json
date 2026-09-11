@@ -1,0 +1,303 @@
+{
+  "label": "baseline: fixed 800, dense only, 35 questions",
+  "timestamp": "20260910-135602",
+  "questions": 35,
+  "config": {
+    "chunk_strategy": "fixed",
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "enriched": false,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense"
+    ],
+    "reranker": null
+  },
+  "metrics": {
+    "recall@1": 0.2,
+    "mrr@1": 0.2,
+    "ndcg@1": 0.2,
+    "recall@5": 0.5714285714285714,
+    "mrr@5": 0.32904761904761903,
+    "ndcg@5": 0.3889986855446528,
+    "recall@10": 0.6285714285714286,
+    "mrr@10": 0.33721088435374147,
+    "ndcg@10": 0.4080463045922718,
+    "recall@20": 0.7428571428571429,
+    "mrr@20": 0.3458156129584701,
+    "ndcg@20": 0.4377463298440603,
+    "recall@50": 0.8285714285714286,
+    "mrr@50": 0.3484396655825227,
+    "ndcg@50": 0.4546184649900558
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.7,
+      "mrr@10": 0.3538095238095238,
+      "ndcg@10": 0.43778756310899364
+    },
+    "named_entity": {
+      "recall@10": 0.375,
+      "mrr@10": 0.15625,
+      "ndcg@10": 0.2115670081520385
+    },
+    "paraphrase": {
+      "recall@10": 0.7142857142857143,
+      "mrr@10": 0.4965986394557823,
+      "ndcg@10": 0.5476190476190477
+    },
+    "ALL": {
+      "recall@10": 0.6285714285714286,
+      "mrr@10": 0.33721088435374147,
+      "ndcg@10": 0.4080463045922718
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "What are the specific indications and iodine concentrations (such as 320 mg Iodine/mL) for intra-arterial procedures",
+      "first_relevant_rank": 20,
+      "top_hit": "IODIXANOL [0fe89ea2] \u2014 all"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "What are the common clinical signs and symptoms of an NSAID overdose, and are they generally reversible?",
+      "first_relevant_rank": 3,
+      "top_hit": "ETODOLAC [420b1ed5] \u2014 all"
+    },
+    {
+      "id": "g-003",
+      "type": "direct_lookup",
+      "question": "What are the clinical guidelines regarding repeat pregnancy testing in amenorrheic women after an initial exclusion of pregnancy?",
+      "first_relevant_rank": 27,
+      "top_hit": "MYCOPHENOLATE MOFETIL [721564bc] \u2014 all"
+    },
+    {
+      "id": "g-004",
+      "type": "direct_lookup",
+      "question": "What ophthalmologic abnormalities, such as cataracts and multiple punctate lenticular opacities, have been reported in patients undergoing multiple-dose quinolone therapy, and is their causal relationship established",
+      "first_relevant_rank": 1,
+      "top_hit": "LEVOFLOXACIN [cbd5153f] \u2014 all"
+    },
+    {
+      "id": "g-005",
+      "type": "direct_lookup",
+      "question": "How did study limitations\u2014such as restricting dosing from hard palate closure (GD 15 to 18) to weaning rather than from implantation (GD 6 to 7) to weaning\u2014affect reproductive toxicity assessments in first-generation offspring?",
+      "first_relevant_rank": 5,
+      "top_hit": "DEXMEDETOMIDINE HYDROCHLORIDE [a99335d0] \u2014 all"
+    },
+    {
+      "id": "g-006",
+      "type": "direct_lookup",
+      "question": "What specific fetal developmental effects, such as decreased body weights and reduced ossification of sternebrae, were observed in relation to animal exposure levels and AUC comparisons?",
+      "first_relevant_rank": 2,
+      "top_hit": "LINEZOLID [b721756c] \u2014 all"
+    },
+    {
+      "id": "g-007",
+      "type": "direct_lookup",
+      "question": "What are the clinical outcomes and potential associations regarding fatal overdoses involving buspirone hydrochloride alone versus ingestions combined with multiple drugs or alcohol?",
+      "first_relevant_rank": 1,
+      "top_hit": "BUSPIRONE HYDROCHLORIDE [476f4f55] \u2014 all"
+    },
+    {
+      "id": "g-008",
+      "type": "direct_lookup",
+      "question": "What are the approved combination regimens, such as clarithromycin tablets with Prilosec (omeprazole) capsules, for treating active duodenal ulcers associated with H. pylori infection?",
+      "first_relevant_rank": 2,
+      "top_hit": "CLARITHROMYCIN [9bf207c0] \u2014 all"
+    },
+    {
+      "id": "g-009",
+      "type": "direct_lookup",
+      "question": "What are the safety monitoring requirements and potential adverse reactions (such as central nervous system and cardiovascular effects) associated with administering a lacosamide loading dose under medical supervision?",
+      "first_relevant_rank": 3,
+      "top_hit": "LACOSAMIDE [7ed5cebe] \u2014 all"
+    },
+    {
+      "id": "g-010",
+      "type": "direct_lookup",
+      "question": "What were the route-specific doses and estimated human exposure multiples (compared to a 16 mg sublingual human dose) evaluated in rat and rabbit teratogenicity studies involving intramuscular, subcutaneous, intravenous, and oral administration?",
+      "first_relevant_rank": 3,
+      "top_hit": "BUPRENORPHINE AND NALOXONE [58d2c995] \u2014 all"
+    },
+    {
+      "id": "g-011",
+      "type": "direct_lookup",
+      "question": "What are the specific incidence rates for gastrointestinal adverse events, such as abdominal pain (upper, lower, and discomfort) and vomiting, across treatment arms?",
+      "first_relevant_rank": null,
+      "top_hit": "BUDESONIDE [2414058b] \u2014 all"
+    },
+    {
+      "id": "g-012",
+      "type": "direct_lookup",
+      "question": "What cardiac effects, such as decreased left ventricular ejection fraction (LVEF), and associated symptoms like shortness of breath, palpitations, and fatigue, are linked to lapatinib therapy?",
+      "first_relevant_rank": 5,
+      "top_hit": "LAPATINIB [302a4346] \u2014 all"
+    },
+    {
+      "id": "g-013",
+      "type": "direct_lookup",
+      "question": "What do published studies indicate regarding the risk of HIV-1 infection and mother-to-child transmission during pregnancy and acute infection, and what preventive methods (such as continuing or initiating Truvada for PrEP) should be considered for at-risk women?",
+      "first_relevant_rank": 1,
+      "top_hit": "EMTRICITABINE AND TENOFOVIR DISOPROXIL FUMARATE [54e82b13] \u2014 all"
+    },
+    {
+      "id": "g-014",
+      "type": "direct_lookup",
+      "question": "What are meperidine's primary therapeutic actions (such as analgesia and sedation) and its qualitative similarities to morphine regarding the central nervous system and smooth muscle organs?",
+      "first_relevant_rank": null,
+      "top_hit": "MEPERIDINE HYDROCHLORIDE [e0e998da] \u2014 all"
+    },
+    {
+      "id": "g-015",
+      "type": "direct_lookup",
+      "question": "What are the monitoring requirements and clinical assessments for bone mineral density, pediatric growth, and ocular complications (such as glaucoma and cataracts) associated with long-term inhaled corticosteroid use?",
+      "first_relevant_rank": 7,
+      "top_hit": "BUDESONIDE INHALATION [87048fa9] \u2014 all"
+    },
+    {
+      "id": "g-016",
+      "type": "direct_lookup",
+      "question": "What were the specific bacteriological eradication rates achieved across clinical studies for key pathogens such as Haemophilus influenzae, Streptococcus pneumoniae, Staphylococcus aureus, Moraxella catarrhalis, Haemophilus parainfluenzae, and Klebsiella pneumoniae as shown in Table 10?",
+      "first_relevant_rank": 5,
+      "top_hit": "MOXIFLOXACIN HYDROCHLORIDE TABLETS, 400 MG [bdb3f89a] \u2014 all"
+    },
+    {
+      "id": "g-017",
+      "type": "direct_lookup",
+      "question": "What hydrolysis product is immediately formed when arsenic trioxide is placed into solution, and which specific species represents the pharmacologically active form?",
+      "first_relevant_rank": 1,
+      "top_hit": "ARSENIC TRIOXIDE [ae5cae02] \u2014 all"
+    },
+    {
+      "id": "g-018",
+      "type": "direct_lookup",
+      "question": "What were the continuous abstinence rates (with 95% confidence intervals) for varenicline (1 mg BID) compared to bupropion SR, nicotine replacement therapy (NRT), and placebo during weeks 9 through 12 in both the non-psychiatric and psychiatric cohorts, as detailed in Table 17?",
+      "first_relevant_rank": 3,
+      "top_hit": "VARENICLINE TARTRATE [6351047a] \u2014 all"
+    },
+    {
+      "id": "g-019",
+      "type": "direct_lookup",
+      "question": "What inclusion and evaluation criteria (such as confirmed infection, pretreatment pathogen isolation, duration of treatment, and follow-up duration) were established for the clinical studies?",
+      "first_relevant_rank": 37,
+      "top_hit": "AMOXICILLIN AND CLAVULANATE POTASSIUM [6339bcdb] \u2014 all"
+    },
+    {
+      "id": "g-020",
+      "type": "direct_lookup",
+      "question": "When should healthcare providers evaluate potential drug interactions relative to initiating and maintaining therapy with this combination regimen?",
+      "first_relevant_rank": null,
+      "top_hit": "BUPRENORPHINE AND NALOXONE [58d2c995] \u2014 all"
+    },
+    {
+      "id": "g-021",
+      "type": "named_entity",
+      "question": "What was the minimal inhibitory concentration (MIC) of ciprofloxacin for the specific Y. pestis test strain?",
+      "first_relevant_rank": 2,
+      "top_hit": "CIPROFLOXACIN HYDROCHLORIDE [d17b0e87] \u2014 all"
+    },
+    {
+      "id": "g-022",
+      "type": "named_entity",
+      "question": "How does long-term administration of NSAIDs lead to renal injuries, such as renal papillary necrosis?",
+      "first_relevant_rank": 12,
+      "top_hit": "NABUMETONE [da34003b] \u2014 all"
+    },
+    {
+      "id": "g-023",
+      "type": "named_entity",
+      "question": "Why cannot adverse reaction rates observed in clinical trials of one drug be directly compared to those in trials of another drug?",
+      "first_relevant_rank": 36,
+      "top_hit": "METOPROLOL SUCCINATE [301ec2ea] \u2014 all"
+    },
+    {
+      "id": "g-024",
+      "type": "named_entity",
+      "question": "What types of clinical and pharmacokinetic studies\u2014including data in adults and pediatric patients with complicated skin and skin structure infections (cSSSI) and S. aureus bloodstream infections\u2014support the use of daptomycin?",
+      "first_relevant_rank": 13,
+      "top_hit": "DAPTOMYCIN [6ec53f7e] \u2014 all"
+    },
+    {
+      "id": "g-025",
+      "type": "named_entity",
+      "question": "What clinical strategy (such as gradual dose reduction rather than abrupt cessation) is recommended when discontinuing venlafaxine to minimize discontinuation symptoms, and what approach is taken if intolerable symptoms emerge?",
+      "first_relevant_rank": 11,
+      "top_hit": "VENLAFAXINE [470ad045] \u2014 all"
+    },
+    {
+      "id": "g-026",
+      "type": "named_entity",
+      "question": "How are TIMI Major, Fatal, and TIMI Minor bleeding events formally defined in terms of hemoglobin/hematocrit drops, clinical presentation, and time-to-death criteria?",
+      "first_relevant_rank": 2,
+      "top_hit": "TICAGRELOR [557351f1] \u2014 all"
+    },
+    {
+      "id": "g-027",
+      "type": "named_entity",
+      "question": "What are the designated storage temperature ranges and official USP conditions specified for maintaining product stability?",
+      "first_relevant_rank": null,
+      "top_hit": "POSACONAZOLE [d5300d14] \u2014 all"
+    },
+    {
+      "id": "g-028",
+      "type": "named_entity",
+      "question": "How do local tumor products (such as those from breast cancer and multiple myeloma) stimulate bone resorption by osteoclasts to cause locally mediated hypercalcemia?",
+      "first_relevant_rank": 4,
+      "top_hit": "ZOLEDRONIC ACID [3885488c] \u2014 all"
+    },
+    {
+      "id": "g-029",
+      "type": "paraphrase",
+      "question": "What specific clinical risk (such as severe hypertensive reactions) is associated with using bupropion XL alongside MAOIs?",
+      "first_relevant_rank": 1,
+      "top_hit": "BUPROPION HYDROCHLORIDE [d5469d64] \u2014 all"
+    },
+    {
+      "id": "g-030",
+      "type": "paraphrase",
+      "question": "Why is using a subtherapeutic dose or monotherapy for HIV-1 treatment considered inappropriate and likely to result in treatment failure?",
+      "first_relevant_rank": null,
+      "top_hit": "ATAZANAVIR [7fbea274] \u2014 all"
+    },
+    {
+      "id": "g-031",
+      "type": "paraphrase",
+      "question": "What are the specific temperature limits and 24-hour expiration window for storing reconstituted solutions, and is freezing permitted?",
+      "first_relevant_rank": null,
+      "top_hit": "CASPOFUNGIN ACETATE [722facc6] \u2014 all"
+    },
+    {
+      "id": "g-032",
+      "type": "paraphrase",
+      "question": "What specific guidance regarding pregnancy notification and patient enrollment should be communicated to women taking divalproex sodium extended-release tablets, including the contact details for the North American Antiepileptic Drug (NAAED) Pregnancy Registry?",
+      "first_relevant_rank": 1,
+      "top_hit": "DIVALPROEX SODIUM [1b12c694] \u2014 all"
+    },
+    {
+      "id": "g-033",
+      "type": "paraphrase",
+      "question": "What instructions should be given to patients regarding the prompt reporting of unexplained muscle symptoms (such as pain, tenderness, or weakness), especially when accompanied by malaise or fever, when starting or increasing the rosuvastatin dosage?",
+      "first_relevant_rank": 7,
+      "top_hit": "ROSUVASTATIN CALCIUM [1aca7a86] \u2014 all"
+    },
+    {
+      "id": "g-034",
+      "type": "paraphrase",
+      "question": "What percentage of a radiolabeled fenofibrate dose is typically recovered in the urine compared to the feces?",
+      "first_relevant_rank": 1,
+      "top_hit": "FENOFIBRATE [d9be3ae3] \u2014 all"
+    },
+    {
+      "id": "g-035",
+      "type": "paraphrase",
+      "question": "What visual change (such as a yellow color intensifying over time) may occur in linezolid injection, and does this affect product potency?",
+      "first_relevant_rank": 3,
+      "top_hit": "VORICONAZOLE [9ec6eda2] \u2014 all"
+    }
+  ]
+}
