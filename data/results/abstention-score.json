@@ -1,0 +1,873 @@
+{
+  "metric": "top score",
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "n_answerable": 35,
+  "n_unanswerable": 40,
+  "chosen": {
+    "threshold": 1.4209681749343872,
+    "false_abstention": 0.02857142857142857,
+    "false_answer": 0.0,
+    "correct_abstention": 1.0,
+    "n_wrongly_refused": 1,
+    "n_wrongly_answered": 0
+  },
+  "curve": [
+    {
+      "threshold": -10.455096244812012,
+      "false_abstention": 0.0,
+      "false_answer": 1.0,
+      "correct_abstention": 0.0,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 40
+    },
+    {
+      "threshold": -9.938745617866516,
+      "false_abstention": 0.0,
+      "false_answer": 0.975,
+      "correct_abstention": 0.025000000000000022,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 39
+    },
+    {
+      "threshold": -9.42239499092102,
+      "false_abstention": 0.0,
+      "false_answer": 0.95,
+      "correct_abstention": 0.050000000000000044,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 38
+    },
+    {
+      "threshold": -8.906044363975525,
+      "false_abstention": 0.0,
+      "false_answer": 0.85,
+      "correct_abstention": 0.15000000000000002,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 34
+    },
+    {
+      "threshold": -8.38969373703003,
+      "false_abstention": 0.0,
+      "false_answer": 0.775,
+      "correct_abstention": 0.22499999999999998,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 31
+    },
+    {
+      "threshold": -7.873343110084534,
+      "false_abstention": 0.0,
+      "false_answer": 0.75,
+      "correct_abstention": 0.25,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 30
+    },
+    {
+      "threshold": -7.356992483139038,
+      "false_abstention": 0.0,
+      "false_answer": 0.7,
+      "correct_abstention": 0.30000000000000004,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 28
+    },
+    {
+      "threshold": -6.8406418561935425,
+      "false_abstention": 0.0,
+      "false_answer": 0.675,
+      "correct_abstention": 0.32499999999999996,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 27
+    },
+    {
+      "threshold": -6.324291229248047,
+      "false_abstention": 0.0,
+      "false_answer": 0.625,
+      "correct_abstention": 0.375,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 25
+    },
+    {
+      "threshold": -5.807940602302551,
+      "false_abstention": 0.0,
+      "false_answer": 0.575,
+      "correct_abstention": 0.42500000000000004,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 23
+    },
+    {
+      "threshold": -5.291589975357056,
+      "false_abstention": 0.0,
+      "false_answer": 0.525,
+      "correct_abstention": 0.475,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 21
+    },
+    {
+      "threshold": -4.77523934841156,
+      "false_abstention": 0.0,
+      "false_answer": 0.5,
+      "correct_abstention": 0.5,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 20
+    },
+    {
+      "threshold": -4.2588887214660645,
+      "false_abstention": 0.0,
+      "false_answer": 0.475,
+      "correct_abstention": 0.525,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 19
+    },
+    {
+      "threshold": -3.742538094520569,
+      "false_abstention": 0.0,
+      "false_answer": 0.4,
+      "correct_abstention": 0.6,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 16
+    },
+    {
+      "threshold": -3.2261874675750732,
+      "false_abstention": 0.0,
+      "false_answer": 0.35,
+      "correct_abstention": 0.65,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 14
+    },
+    {
+      "threshold": -2.7098368406295776,
+      "false_abstention": 0.0,
+      "false_answer": 0.3,
+      "correct_abstention": 0.7,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 12
+    },
+    {
+      "threshold": -2.193486213684082,
+      "false_abstention": 0.0,
+      "false_answer": 0.275,
+      "correct_abstention": 0.725,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 11
+    },
+    {
+      "threshold": -1.6771355867385864,
+      "false_abstention": 0.0,
+      "false_answer": 0.25,
+      "correct_abstention": 0.75,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 10
+    },
+    {
+      "threshold": -1.1607849597930908,
+      "false_abstention": 0.0,
+      "false_answer": 0.175,
+      "correct_abstention": 0.825,
+      "n_wrongly_refused": 0,
+      "n_wrongly_answered": 7
+    },
+    {
+      "threshold": -0.6444343328475952,
+      "false_abstention": 0.02857142857142857,
+      "false_answer": 0.15,
+      "correct_abstention": 0.85,
+      "n_wrongly_refused": 1,
+      "n_wrongly_answered": 6
+    },
+    {
+      "threshold": -0.1280837059020996,
+      "false_abstention": 0.02857142857142857,
+      "false_answer": 0.1,
+      "correct_abstention": 0.9,
+      "n_wrongly_refused": 1,
+      "n_wrongly_answered": 4
+    },
+    {
+      "threshold": 0.388266921043396,
+      "false_abstention": 0.02857142857142857,
+      "false_answer": 0.075,
+      "correct_abstention": 0.925,
+      "n_wrongly_refused": 1,
+      "n_wrongly_answered": 3
+    },
+    {
+      "threshold": 0.9046175479888916,
+      "false_abstention": 0.02857142857142857,
+      "false_answer": 0.025,
+      "correct_abstention": 0.975,
+      "n_wrongly_refused": 1,
+      "n_wrongly_answered": 1
+    },
+    {
+      "threshold": 1.4209681749343872,
+      "false_abstention": 0.02857142857142857,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 1,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 1.9373188018798828,
+      "false_abstention": 0.05714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 2,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 2.4536694288253784,
+      "false_abstention": 0.05714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 2,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 2.970020055770874,
+      "false_abstention": 0.05714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 2,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 3.4863706827163696,
+      "false_abstention": 0.11428571428571428,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 4,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 4.002721309661865,
+      "false_abstention": 0.11428571428571428,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 4,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 4.519071936607361,
+      "false_abstention": 0.17142857142857143,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 6,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 5.0354225635528564,
+      "false_abstention": 0.2,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 7,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 5.551773190498352,
+      "false_abstention": 0.3142857142857143,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 11,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 6.068123817443848,
+      "false_abstention": 0.34285714285714286,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 12,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 6.584474444389343,
+      "false_abstention": 0.42857142857142855,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 15,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 7.100825071334839,
+      "false_abstention": 0.6285714285714286,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 22,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 7.6171756982803345,
+      "false_abstention": 0.7714285714285715,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 27,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 8.13352632522583,
+      "false_abstention": 0.8857142857142857,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 31,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 8.649876952171326,
+      "false_abstention": 0.9428571428571428,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 33,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 9.166227579116821,
+      "false_abstention": 0.9714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 34,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 9.682578206062317,
+      "false_abstention": 0.9714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 34,
+      "n_wrongly_answered": 0
+    },
+    {
+      "threshold": 10.198928833007812,
+      "false_abstention": 0.9714285714285714,
+      "false_answer": 0.0,
+      "correct_abstention": 1.0,
+      "n_wrongly_refused": 34,
+      "n_wrongly_answered": 0
+    }
+  ],
+  "answerable": [
+    {
+      "id": "g-001",
+      "question": "What does the low inhibitory potential of galantamine indicate regarding its interaction with major cytochrome P450 enzymes?",
+      "top_score": 6.623747825622559,
+      "margin": 0.0,
+      "top_hit": "GALANTAMINE HYDROBROMIDE [d5b0e225] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "g-002",
+      "question": "What is currently known regarding the underlying mechanisms, long-term consequences, and established causal relationship of these fat redistribution events?",
+      "top_score": 6.957714080810547,
+      "margin": 0.743985652923584,
+      "top_hit": "ATAZANAVIR [7fbea274] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-003",
+      "question": "When do peak plasma concentrations typically occur postdose across the pediatric age range, and how do systemic exposure (AUC) and weight-normalized oral clearance compare between younger children (1 month to <5 years) and older pediatric subjects?",
+      "top_score": 6.919919967651367,
+      "margin": 0.0,
+      "top_hit": "GABAPENTIN [75418d32] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-004",
+      "question": "What are the estimated baseline background risks of major birth defects and miscarriage in clinically recognized pregnancies within the U.S. general population?",
+      "top_score": 10.198928833007812,
+      "margin": 0.0,
+      "top_hit": "METFORMIN [33ecddbe] \u2014 pregnancy"
+    },
+    {
+      "id": "g-005",
+      "question": "How is hypothermia clinically defined in the context of topiramate and valproic acid co-administration, and can it occur with or without hyperammonemia upon starting or increasing the topiramate dose?",
+      "top_score": 6.487545490264893,
+      "margin": 0.7005228996276855,
+      "top_hit": "TOPIRAMATE [8bd03bb2] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-006",
+      "question": "What clinical actions and serious risks\u2014such as ectopic pregnancy, fertility loss, septic abortion, and premature labor\u2014are associated with pregnancy occurring while Mirena is in place?",
+      "top_score": 4.467778205871582,
+      "margin": 2.9091196060180664,
+      "top_hit": "LEVONORGESTREL [dcbd6aa2] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-007",
+      "question": "What did subgroup analyses indicate regarding treatment outcomes as a function of patient age, race, or gender?",
+      "top_score": 8.084320068359375,
+      "margin": 0.09906148910522461,
+      "top_hit": "PAROXETINE [7d558598] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-008",
+      "question": "What are the specific National Drug Code (NDC) numbers and corresponding bottle counts (such as bottles of 100, 500, or 1000) for the product?",
+      "top_score": 4.328912258148193,
+      "margin": 0.1897597312927246,
+      "top_hit": "LISINOPRIL [a79a034d] \u2014 how_supplied"
+    },
+    {
+      "id": "g-009",
+      "question": "Why should the lowest recommended starting doses of midazolam be used in patients with residual effects from anesthetics or those receiving concurrent sedatives/opioids?",
+      "top_score": 7.845388412475586,
+      "margin": 4.211009979248047,
+      "top_hit": "MIDAZOLAM HYDROCHLORIDE [880cac48] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-010",
+      "question": "Which patient populations were included in the analyses evaluating the prevention of secondarily generalized tonic-clonic seizures across the three placebo-controlled studies?",
+      "top_score": 7.198558807373047,
+      "margin": 0.0,
+      "top_hit": "GABAPENTIN [75418d32] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-011",
+      "question": "What skeletal abnormalities were observed in rabbits following intramuscular or oral administration of buprenorphine, and were these findings statistically significant or associated with maternal toxicity?",
+      "top_score": 7.581647872924805,
+      "margin": 0.0,
+      "top_hit": "BUPRENORPHINE AND NALOXONE [58d2c995] \u2014 pregnancy"
+    },
+    {
+      "id": "g-012",
+      "question": "What are the timeline parameters for omeprazole's antisecretory effect following oral administration\u2014including time to onset, peak effect, 24-hour inhibition percentage, and overall duration of action?",
+      "top_score": 6.106937408447266,
+      "margin": 0.0,
+      "top_hit": "OMEPRAZOLE [5a09ce48] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-013",
+      "question": "What clinical possibility should be considered if signs of pulmonary edema develop in a patient taking TRACLEER, and what action regarding drug continuation should be evaluated?",
+      "top_score": 5.065320014953613,
+      "margin": 1.4660944938659668,
+      "top_hit": "BOSENTAN [749e42fb] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-014",
+      "question": "What is the pharmacological classification of isotretinoin, what dosage range is typically administered, and how do these pharmacologic doses affect sebaceous gland function and keratinization?",
+      "top_score": 5.153938293457031,
+      "margin": 3.763913154602051,
+      "top_hit": "ISOTRETINOIN [27b3cf26] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-015",
+      "question": "What cardiovascular adverse events\u2014such as various atrial and ventricular arrhythmias, heart block, ECG changes consistent with myocardial ischemia, elevated CPK-MB levels, and syncope\u2014have been observed?",
+      "top_score": 5.84938383102417,
+      "margin": 3.615708589553833,
+      "top_hit": "REMIFENTANIL HYDROCHLORIDE [d2374b84] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-016",
+      "question": "What is the pharmacological class, chemical designation, empirical formula (C",
+      "top_score": -0.9511212706565857,
+      "margin": 0.246493399143219,
+      "top_hit": "DULOXETINE HYDROCHLORIDE [a5804a0b] \u2014 description"
+    },
+    {
+      "id": "g-017",
+      "question": "What risks are associated with the concomitant use of fluoxetine and other serotonergic drugs, particularly during treatment initiation and dose increases, and what patient counseling is advised?",
+      "top_score": 8.10844612121582,
+      "margin": 0.0,
+      "top_hit": "FLUOXETINE [d1c768b5] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-018",
+      "question": "How did the overall spectrum of adverse reactions in this monotherapy trial compare to those observed in previous adjunctive placebo-controlled studies?",
+      "top_score": 6.200688362121582,
+      "margin": 0.7191228866577148,
+      "top_hit": "LACOSAMIDE [7ed5cebe] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-019",
+      "question": "On what pharmacological and systemic exposure assumptions are the animal-to-human dose multiples calculated between esomeprazole and omeprazole?",
+      "top_score": 7.463630676269531,
+      "margin": 0.0,
+      "top_hit": "OMEPRAZOLE [5a09ce48] \u2014 pregnancy"
+    },
+    {
+      "id": "g-020",
+      "question": "How did the frequency of less common adverse reactions compare between montelukast sodium and placebo, and how consistent was the safety profile when administered as a single dose for exercise-induced bronchoconstriction (EIB) in patients 15 years and older?",
+      "top_score": 8.565008163452148,
+      "margin": 1.0443391799926758,
+      "top_hit": "MONTELUKAST SODIUM [c69ab399] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-021",
+      "question": "What is the magnitude of the increased risk for developing a gastrointestinal bleed in patients with a prior history of peptic ulcer disease and/or GI bleeding compared to patients without these risk factors?",
+      "top_score": 7.510490417480469,
+      "margin": 0.015012741088867188,
+      "top_hit": "CELECOXIB [b0e0243e] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-022",
+      "question": "What pharmacokinetic parameters and mean MPA area under the curve (AUC) values were observed across pediatric age cohorts (such as 6 to <12 years and 12 to 18 years)?",
+      "top_score": 5.517203330993652,
+      "margin": 0.0,
+      "top_hit": "MYCOPHENOLATE MOFETIL [721564bc] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-023",
+      "question": "Why is it contraindicated to initiate duloxetine delayed-release capsules in a patient currently being treated with linezolid or intravenous methylene blue, and what alternative clinical interventions should be considered if urgent psychiatric treatment is required?",
+      "top_score": 8.062164306640625,
+      "margin": 0.2941598892211914,
+      "top_hit": "DULOXETINE [b32a39d8] \u2014 contraindications"
+    },
+    {
+      "id": "g-024",
+      "question": "What concerning behaviors or adverse clinical signs\u2014such as those linked to Warnings and Precautions section 5.1\u2014should be reported immediately to healthcare providers?",
+      "top_score": 5.418344497680664,
+      "margin": 0.48090696334838867,
+      "top_hit": "ESOMEPRAZOLE SODIUM [9354958c] \u2014 information_for_patients"
+    },
+    {
+      "id": "g-025",
+      "question": "Upon what pharmacokinetic, safety, and clinical trial data (including studies of acyclovir in pediatric chickenpox) is the use of valacyclovir for treating chickenpox in pediatric patients aged 2 to less than 18 years established?",
+      "top_score": 7.0363359451293945,
+      "margin": 0.0,
+      "top_hit": "VALACYCLOVIR [b713ebfb] \u2014 use_in_specific_populations"
+    },
+    {
+      "id": "g-026",
+      "question": "How can intracavernous injections of EDEX lead to increased peripheral blood levels of PGE1 and its metabolites\u2014particularly in patients with corpora cavernosa venous leakage\u2014and what systemic hemodynamic effects may result?",
+      "top_score": 8.701339721679688,
+      "margin": 0.11190128326416016,
+      "top_hit": "ALPROSTADIL [e8b8ec8d] \u2014 general_precautions"
+    },
+    {
+      "id": "g-027",
+      "question": "How do the incidences of ear, labyrinth, and eye disorders (such as vertigo, diplopia, and blurred vision) compare between placebo and various lacosamide dose tiers (200 mg, 400 mg, and 600 mg/day)?",
+      "top_score": 1.6908944845199585,
+      "margin": 0.1520310640335083,
+      "top_hit": "LAMOTRIGINE ER [faccacb7] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-028",
+      "question": "Have any gender-related or race-specific pharmacokinetic differences or disposition effects been observed or formally studied for oxcarbazepine across children, adults, or the elderly?",
+      "top_score": 8.330041885375977,
+      "margin": 0.0,
+      "top_hit": "OXCARBAZEPINE [4ebcb0e5] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-029",
+      "question": "What are the cardiovascular contraindications for NSAIDs in the setting of coronary artery bypass graft (CABG) surgery?",
+      "top_score": 7.052629470825195,
+      "margin": 0.09397172927856445,
+      "top_hit": "CELECOXIB [b0e0243e] \u2014 boxed_warning"
+    },
+    {
+      "id": "g-030",
+      "question": "What were the no-effect levels and corresponding multiple of the maximum recommended human dose (MRHD on a mg/m",
+      "top_score": 4.971897602081299,
+      "margin": 0.0,
+      "top_hit": "LURASIDONE HYDROCHLORIDE [b848e6f3] \u2014 pediatric_use"
+    },
+    {
+      "id": "g-031",
+      "question": "What are the combined rates of excellent and good intubating conditions and their associated 95% confidence intervals across the different dosing and anesthetic groups (cisatracurium besylate 0.15 mg/kg or 0.20 mg/kg with propofol or thiopental)?",
+      "top_score": 3.44679594039917,
+      "margin": 0.393359899520874,
+      "top_hit": "CISATRACURIUM BESYLATE [291a55dd] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-032",
+      "question": "For what primary clinical conditions\u2014including the management of anxiety disorders or the short-term relief of anxiety symptoms\u2014are buspirone hydrochloride tablets indicated, and how are everyday life stresses distinguished from conditions requiring treatment?",
+      "top_score": 7.565791130065918,
+      "margin": 2.9837422370910645,
+      "top_hit": "BUSPIRONE HYDROCHLORIDE [476f4f55] \u2014 indications_and_usage"
+    },
+    {
+      "id": "g-033",
+      "question": "What is the recommended Day 1, Day 15, and maintenance (starting on Day 29) subcutaneous dosing schedule for pediatric patients weighing 40 kg (88 lbs) and greater?",
+      "top_score": 6.656717300415039,
+      "margin": 4.346912622451782,
+      "top_hit": "ADALIMUMAB-AQVH [cd0e7af2] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-034",
+      "question": "Which patient populations and clinical scenarios\u2014such as debilitated patients, those receiving CNS depressants, or patients undergoing upper airway procedures without an endotracheal tube\u2014exhibit an increased potential for adverse central nervous system effects?",
+      "top_score": 3.2998368740081787,
+      "margin": 0.0736701488494873,
+      "top_hit": "MIDAZOLAM [575d8bf0] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-035",
+      "question": "What clinical events\u2014including seizures, extrapyramidal reactions, and lethargy\u2014have been reported in association with metoclopramide overdoses, and is there a consistent pattern to these reports?",
+      "top_score": 7.001079082489014,
+      "margin": 1.9850010871887207,
+      "top_hit": "METOCLOPRAMIDE [94e5acdf] \u2014 overdosage"
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "u-001",
+      "question": "Can you provide the entry for lisinopril from the generic names dataset?",
+      "top_score": -3.3717124462127686,
+      "margin": 0.24094867706298828,
+      "top_hit": "LISINOPRIL [a79a034d] \u2014 description"
+    },
+    {
+      "id": "u-002",
+      "question": "Can you extract the dosage records for apixaban from the list?",
+      "top_score": -8.828968048095703,
+      "margin": 0.0,
+      "top_hit": "CLARITHROMYCIN [9bf207c0] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "u-003",
+      "question": "Is sitagliptin listed under oral antidiabetic agents in the corpus?",
+      "top_score": -0.9916752576828003,
+      "margin": 2.4596420526504517,
+      "top_hit": "CANAGLIFLOZIN [5f76e16f] \u2014 clinical_studies"
+    },
+    {
+      "id": "u-004",
+      "question": "What information is given for dapagliflozin in the drug names dataset?",
+      "top_score": 0.14570549130439758,
+      "margin": 0.0,
+      "top_hit": "EMPAGLIFLOZIN [5777b8a8] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "u-005",
+      "question": "Does the dataset include semaglutide injection or oral formulations?",
+      "top_score": -9.114009857177734,
+      "margin": 0.29065608978271484,
+      "top_hit": "CISATRACURIUM BESYLATE [291a55dd] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "u-006",
+      "question": "Where does spironolactone appear in the 400 generic names list?",
+      "top_score": -9.732988357543945,
+      "margin": 0.1405963897705078,
+      "top_hit": "MORPHINE SULFATE [ad08cd86] \u2014 description"
+    },
+    {
+      "id": "u-007",
+      "question": "Is cyclobenzaprine hydrochloride present in the corpus?",
+      "top_score": -3.487520217895508,
+      "margin": 0.2551689147949219,
+      "top_hit": "VENLAFAXINE HYDROCHLORIDE [9f697c00] \u2014 description"
+    },
+    {
+      "id": "u-008",
+      "question": "What is the exact spelling or entry for cetirizine hydrochloride in the dataset?",
+      "top_score": 0.8581059575080872,
+      "margin": 2.3621708750724792,
+      "top_hit": "LEVOCETIRIZINE DIHYDROCHLORIDE [dae403cd] \u2014 description"
+    },
+    {
+      "id": "u-009",
+      "question": "Does the corpus contain loratadine?",
+      "top_score": -9.005245208740234,
+      "margin": 0.0,
+      "top_hit": "SILDENAFIL [78101030] \u2014 mechanism_of_action"
+    },
+    {
+      "id": "u-010",
+      "question": "Can you provide the record for acyclovir from the drug list?",
+      "top_score": -1.4621970653533936,
+      "margin": 0.0,
+      "top_hit": "VALACYCLOVIR [b713ebfb] \u2014 pregnancy"
+    },
+    {
+      "id": "u-011",
+      "question": "Is prednisolone listed alongside prednisone in the corpus?",
+      "top_score": -1.3439173698425293,
+      "margin": 0.02718639373779297,
+      "top_hit": "METHYLPREDNISOLONE ACETATE [18dacdba] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "u-012",
+      "question": "What dosage forms of nitrofurantoin macrocrystals are available in the dataset?",
+      "top_score": -3.7784605026245117,
+      "margin": 0.8043642044067383,
+      "top_hit": "ORFORGLIPRON [8ac446c5] \u2014 dosage_forms_and_strengths"
+    },
+    {
+      "id": "u-013",
+      "question": "Does the corpus include isosorbide mononitrate?",
+      "top_score": -1.2475684881210327,
+      "margin": 0.0,
+      "top_hit": "HYDRALAZINE HYDROCHLORIDE AND ISOSORBIDE DINITRATE [2a6fe05a] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "u-014",
+      "question": "Can you retrieve the entry for promethazine hydrochloride from the 400 generic names?",
+      "top_score": -6.467177867889404,
+      "margin": 0.5031890869140625,
+      "top_hit": "MOXIFLOXACIN HYDROCHLORIDE TABLETS, 400 MG [bdb3f89a] \u2014 adverse_reactions"
+    },
+    {
+      "id": "u-015",
+      "question": "Is hydroxyzine pamoate part of the provided drug corpus?",
+      "top_score": -6.889987945556641,
+      "margin": 0.0,
+      "top_hit": "RISPERIDONE [2f83d3e9] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "u-016",
+      "question": "Does the list contain candesartan cilexetil?",
+      "top_score": -2.78244686126709,
+      "margin": 3.7660903930664062,
+      "top_hit": "OLMESARTAN MEDOXOMIL [a4ceea38] \u2014 description"
+    },
+    {
+      "id": "u-017",
+      "question": "What details are provided for bisoprolol fumarate in the dataset?",
+      "top_score": -0.6207224130630493,
+      "margin": 0.033544063568115234,
+      "top_hit": "FORMOTEROL FUMARATE [9786f3e2] \u2014 description"
+    },
+    {
+      "id": "u-018",
+      "question": "Is flecainide acetate present in the 400 generic names corpus?",
+      "top_score": -8.395925521850586,
+      "margin": 0.10764026641845703,
+      "top_hit": "CASPOFUNGIN ACETATE [722facc6] \u2014 description"
+    },
+    {
+      "id": "u-019",
+      "question": "Can you extract the entry for propafenone hydrochloride from the corpus?",
+      "top_score": -5.585216522216797,
+      "margin": 0.2803382873535156,
+      "top_hit": "PROPRANOLOL HYDROCHLORIDE [ed10dd67] \u2014 description"
+    },
+    {
+      "id": "u-020",
+      "question": "Does the dataset feature dabigatran etexilate?",
+      "top_score": -6.345165729522705,
+      "margin": 0.8595938682556152,
+      "top_hit": "ATAZANAVIR [7fbea274] \u2014 drug_interactions"
+    },
+    {
+      "id": "u-021",
+      "question": "Is erythromycin base or stearate listed in the corpus?",
+      "top_score": -7.826619625091553,
+      "margin": 0.7919659614562988,
+      "top_hit": "FLUTICASONE PROPIONATE AND SALMETEROL XINAFOATE [80b36523] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "u-022",
+      "question": "What information is recorded for meropenem in the drug names list?",
+      "top_score": -2.0053296089172363,
+      "margin": 1.175494909286499,
+      "top_hit": "FOSAPREPITANT [d624667d] \u2014 drug_interactions"
+    },
+    {
+      "id": "u-023",
+      "question": "Can you provide the record for cefotaxime sodium from the dataset?",
+      "top_score": -6.266106605529785,
+      "margin": 2.4711265563964844,
+      "top_hit": "CELECOXIB [b0e0243e] \u2014 description"
+    },
+    {
+      "id": "u-024",
+      "question": "Does the corpus contain ceftriaxone sodium?",
+      "top_score": -4.140270233154297,
+      "margin": 2.610095977783203,
+      "top_hit": "NALTREXONE HYDROCHLORIDE [7976b328] \u2014 description"
+    },
+    {
+      "id": "u-025",
+      "question": "Is cefazolin sodium listed among the generic names?",
+      "top_score": -4.355037212371826,
+      "margin": 0.07301855087280273,
+      "top_hit": "PIPERACILLIN SODIUM AND TAZOBACTAM SODIUM [68d5384d] \u2014 description"
+    },
+    {
+      "id": "u-026",
+      "question": "What details are available for terbinafine hydrochloride in the corpus?",
+      "top_score": -2.5390138626098633,
+      "margin": 3.078430652618408,
+      "top_hit": "TERAZOSIN HYDROCHLORIDE [85e450c2] \u2014 description"
+    },
+    {
+      "id": "u-027",
+      "question": "Does the dataset include nystatin oral suspension or cream?",
+      "top_score": -7.437472343444824,
+      "margin": 0.0,
+      "top_hit": "POSACONAZOLE [d5300d14] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "u-028",
+      "question": "Is permethrin cream present in the 400 generic names list?",
+      "top_score": -9.021160125732422,
+      "margin": 0.10377311706542969,
+      "top_hit": "MOXIFLOXACIN HYDROCHLORIDE [1a98b20d] \u2014 adverse_reactions"
+    },
+    {
+      "id": "u-029",
+      "question": "Can you extract the entry for mupirocin ointment from the corpus?",
+      "top_score": -10.455096244812012,
+      "margin": 0.0,
+      "top_hit": "SILDENAFIL [78101030] \u2014 mechanism_of_action"
+    },
+    {
+      "id": "u-030",
+      "question": "Does the corpus include mesalamine delayed-release tablets?",
+      "top_score": 0.9236413240432739,
+      "margin": 2.865922451019287,
+      "top_hit": "POSACONAZOLE [d5300d14] \u2014 description"
+    },
+    {
+      "id": "u-031",
+      "question": "Is sulfamethoxazole and trimethoprim present in the corpus?",
+      "top_score": -5.183977127075195,
+      "margin": 2.2774906158447266,
+      "top_hit": "PHENYTOIN SODIUM [afdf66e0] \u2014 drug_interactions"
+    },
+    {
+      "id": "u-032",
+      "question": "Does the dataset feature nitroprusside sodium?",
+      "top_score": -9.328657150268555,
+      "margin": 0.03608512878417969,
+      "top_hit": "VALPROATE SODIUM [3dfb6da1] \u2014 description"
+    },
+    {
+      "id": "u-033",
+      "question": "Is zonisamide present in the corpus?",
+      "top_score": -0.620764970779419,
+      "margin": 0.320669949054718,
+      "top_hit": "ZONISAMIDE [467a73f0] \u2014 warnings"
+    },
+    {
+      "id": "u-034",
+      "question": "Does the dataset include primidone?",
+      "top_score": -8.682559967041016,
+      "margin": 2.118589401245117,
+      "top_hit": "PALIPERIDONE [be30f3cc] \u2014 adverse_reactions"
+    },
+    {
+      "id": "u-035",
+      "question": "Can you retrieve the record for guanfacine hydrochloride from the dataset?",
+      "top_score": -8.078727722167969,
+      "margin": 0.009818077087402344,
+      "top_hit": "DEXMEDETOMIDINE HYDROCHLORIDE [a99335d0] \u2014 description"
+    },
+    {
+      "id": "u-036",
+      "question": "Is clonidine hydrochloride present in the 400 generic names list?",
+      "top_score": -3.201956272125244,
+      "margin": 0.6137990951538086,
+      "top_hit": "CLOMIPRAMINE HYDROCHLORIDE [b1809cb2] \u2014 description"
+    },
+    {
+      "id": "u-037",
+      "question": "Does the corpus contain methocarbamol?",
+      "top_score": -6.246358871459961,
+      "margin": 2.415863037109375,
+      "top_hit": "OXCARBAZEPINE [4ebcb0e5] \u2014 description"
+    },
+    {
+      "id": "u-038",
+      "question": "What information is provided for bethanechol chloride in the dataset?",
+      "top_score": -5.355680465698242,
+      "margin": 3.717230796813965,
+      "top_hit": "DEXMEDETOMIDINE HYDROCHLORIDE [a99335d0] \u2014 information_for_patients"
+    },
+    {
+      "id": "u-039",
+      "question": "What dosage forms of clindamycin phosphate are listed in the dataset?",
+      "top_score": 0.8587391972541809,
+      "margin": 0.4338129162788391,
+      "top_hit": "CLARITHROMYCIN [9bf207c0] \u2014 dosage_forms_and_strengths"
+    },
+    {
+      "id": "u-040",
+      "question": "Does the corpus contain piroxicam capsules?",
+      "top_score": -4.113504409790039,
+      "margin": 0.665867805480957,
+      "top_hit": "PIRFENIDONE [155b948e] \u2014 description"
+    }
+  ]
+}

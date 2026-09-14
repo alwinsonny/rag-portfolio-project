@@ -1,0 +1,314 @@
+{
+  "label": "section 1000, hybrid + cross-encoder rerank",
+  "timestamp": "20260912-222328",
+  "questions": 35,
+  "config": {
+    "chunk_strategy": "section",
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "enriched": false,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense",
+      "lexical"
+    ],
+    "rrf_k": 60,
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "rerank_top_n": 8
+  },
+  "arm_contributions": {
+    "dense": 294,
+    "lexical": 279
+  },
+  "mean_latency_ms": {
+    "retrieval_ms": 724.2,
+    "rerank_ms": 426.2
+  },
+  "metrics": {
+    "recall@1": 0.4357142857142857,
+    "mrr@1": 0.5714285714285714,
+    "ndcg@1": 0.5714285714285714,
+    "recall@5": 0.7428571428571429,
+    "mrr@5": 0.6304761904761905,
+    "ndcg@5": 0.6601773383019234,
+    "recall@10": 0.7714285714285715,
+    "mrr@10": 0.6336507936507937,
+    "ndcg@10": 0.6687781953208942,
+    "recall@20": 0.8,
+    "mrr@20": 0.6358485958485959,
+    "ndcg@20": 0.6762824677505284,
+    "recall@50": 0.8,
+    "mrr@50": 0.6358485958485959,
+    "ndcg@50": 0.6762824677505284
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.8,
+      "mrr@10": 0.75,
+      "ndcg@10": 0.7630929753571458
+    },
+    "named_entity": {
+      "recall@10": 0.75,
+      "mrr@10": 0.37222222222222223,
+      "ndcg@10": 0.46981556523173035
+    },
+    "paraphrase": {
+      "recall@10": 0.7142857142857143,
+      "mrr@10": 0.6,
+      "ndcg@10": 0.6266932581763631
+    },
+    "ALL": {
+      "recall@10": 0.7714285714285715,
+      "mrr@10": 0.6336507936507937,
+      "ndcg@10": 0.6687781953208942
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "What does the low inhibitory potential of galantamine indicate regarding its interaction with major cytochrome P450 enzymes?",
+      "first_relevant_rank": 1,
+      "top_hit": "GALANTAMINE HYDROBROMIDE [d5b0e225] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "What is currently known regarding the underlying mechanisms, long-term consequences, and established causal relationship of these fat redistribution events?",
+      "first_relevant_rank": 2,
+      "top_hit": "ATAZANAVIR [7fbea274] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-003",
+      "type": "direct_lookup",
+      "question": "When do peak plasma concentrations typically occur postdose across the pediatric age range, and how do systemic exposure (AUC) and weight-normalized oral clearance compare between younger children (1 month to <5 years) and older pediatric subjects?",
+      "first_relevant_rank": 1,
+      "top_hit": "GABAPENTIN [75418d32] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "g-004",
+      "type": "direct_lookup",
+      "question": "What are the estimated baseline background risks of major birth defects and miscarriage in clinically recognized pregnancies within the U.S. general population?",
+      "first_relevant_rank": null,
+      "top_hit": "METFORMIN [33ecddbe] \u2014 pregnancy"
+    },
+    {
+      "id": "g-005",
+      "type": "direct_lookup",
+      "question": "How is hypothermia clinically defined in the context of topiramate and valproic acid co-administration, and can it occur with or without hyperammonemia upon starting or increasing the topiramate dose?",
+      "first_relevant_rank": 1,
+      "top_hit": "TOPIRAMATE [8bd03bb2] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-006",
+      "type": "direct_lookup",
+      "question": "What clinical actions and serious risks\u2014such as ectopic pregnancy, fertility loss, septic abortion, and premature labor\u2014are associated with pregnancy occurring while Mirena is in place?",
+      "first_relevant_rank": 1,
+      "top_hit": "LEVONORGESTREL [dcbd6aa2] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-007",
+      "type": "direct_lookup",
+      "question": "What did subgroup analyses indicate regarding treatment outcomes as a function of patient age, race, or gender?",
+      "first_relevant_rank": null,
+      "top_hit": "PAROXETINE [7d558598] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-008",
+      "type": "direct_lookup",
+      "question": "What are the specific National Drug Code (NDC) numbers and corresponding bottle counts (such as bottles of 100, 500, or 1000) for the product?",
+      "first_relevant_rank": 13,
+      "top_hit": "METOPROLOL SUCCINATE [301ec2ea] \u2014 how_supplied"
+    },
+    {
+      "id": "g-009",
+      "type": "direct_lookup",
+      "question": "Why should the lowest recommended starting doses of midazolam be used in patients with residual effects from anesthetics or those receiving concurrent sedatives/opioids?",
+      "first_relevant_rank": 1,
+      "top_hit": "MIDAZOLAM HYDROCHLORIDE [880cac48] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-010",
+      "type": "direct_lookup",
+      "question": "Which patient populations were included in the analyses evaluating the prevention of secondarily generalized tonic-clonic seizures across the three placebo-controlled studies?",
+      "first_relevant_rank": 1,
+      "top_hit": "GABAPENTIN [75418d32] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-011",
+      "type": "direct_lookup",
+      "question": "What skeletal abnormalities were observed in rabbits following intramuscular or oral administration of buprenorphine, and were these findings statistically significant or associated with maternal toxicity?",
+      "first_relevant_rank": 1,
+      "top_hit": "BUPRENORPHINE AND NALOXONE [58d2c995] \u2014 pregnancy"
+    },
+    {
+      "id": "g-012",
+      "type": "direct_lookup",
+      "question": "What are the timeline parameters for omeprazole's antisecretory effect following oral administration\u2014including time to onset, peak effect, 24-hour inhibition percentage, and overall duration of action?",
+      "first_relevant_rank": 1,
+      "top_hit": "OMEPRAZOLE [5a09ce48] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-013",
+      "type": "direct_lookup",
+      "question": "What clinical possibility should be considered if signs of pulmonary edema develop in a patient taking TRACLEER, and what action regarding drug continuation should be evaluated?",
+      "first_relevant_rank": 1,
+      "top_hit": "BOSENTAN [749e42fb] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-014",
+      "type": "direct_lookup",
+      "question": "What is the pharmacological classification of isotretinoin, what dosage range is typically administered, and how do these pharmacologic doses affect sebaceous gland function and keratinization?",
+      "first_relevant_rank": 1,
+      "top_hit": "ISOTRETINOIN [27b3cf26] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-015",
+      "type": "direct_lookup",
+      "question": "What cardiovascular adverse events\u2014such as various atrial and ventricular arrhythmias, heart block, ECG changes consistent with myocardial ischemia, elevated CPK-MB levels, and syncope\u2014have been observed?",
+      "first_relevant_rank": 1,
+      "top_hit": "REMIFENTANIL HYDROCHLORIDE [d2374b84] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-016",
+      "type": "direct_lookup",
+      "question": "What is the pharmacological class, chemical designation, empirical formula (C",
+      "first_relevant_rank": null,
+      "top_hit": "DULOXETINE HYDROCHLORIDE [a5804a0b] \u2014 description"
+    },
+    {
+      "id": "g-017",
+      "type": "direct_lookup",
+      "question": "What risks are associated with the concomitant use of fluoxetine and other serotonergic drugs, particularly during treatment initiation and dose increases, and what patient counseling is advised?",
+      "first_relevant_rank": 2,
+      "top_hit": "FLUOXETINE [d1c768b5] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-018",
+      "type": "direct_lookup",
+      "question": "How did the overall spectrum of adverse reactions in this monotherapy trial compare to those observed in previous adjunctive placebo-controlled studies?",
+      "first_relevant_rank": 1,
+      "top_hit": "LACOSAMIDE [7ed5cebe] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-019",
+      "type": "direct_lookup",
+      "question": "On what pharmacological and systemic exposure assumptions are the animal-to-human dose multiples calculated between esomeprazole and omeprazole?",
+      "first_relevant_rank": 1,
+      "top_hit": "OMEPRAZOLE [5a09ce48] \u2014 use_in_specific_populations"
+    },
+    {
+      "id": "g-020",
+      "type": "direct_lookup",
+      "question": "How did the frequency of less common adverse reactions compare between montelukast sodium and placebo, and how consistent was the safety profile when administered as a single dose for exercise-induced bronchoconstriction (EIB) in patients 15 years and older?",
+      "first_relevant_rank": 1,
+      "top_hit": "MONTELUKAST SODIUM [c69ab399] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-021",
+      "type": "named_entity",
+      "question": "What is the magnitude of the increased risk for developing a gastrointestinal bleed in patients with a prior history of peptic ulcer disease and/or GI bleeding compared to patients without these risk factors?",
+      "first_relevant_rank": 9,
+      "top_hit": "CELECOXIB [b0e0243e] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-022",
+      "type": "named_entity",
+      "question": "What pharmacokinetic parameters and mean MPA area under the curve (AUC) values were observed across pediatric age cohorts (such as 6 to <12 years and 12 to 18 years)?",
+      "first_relevant_rank": null,
+      "top_hit": "MYCOPHENOLATE MOFETIL [721564bc] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-023",
+      "type": "named_entity",
+      "question": "Why is it contraindicated to initiate duloxetine delayed-release capsules in a patient currently being treated with linezolid or intravenous methylene blue, and what alternative clinical interventions should be considered if urgent psychiatric treatment is required?",
+      "first_relevant_rank": 3,
+      "top_hit": "DULOXETINE [b32a39d8] \u2014 contraindications"
+    },
+    {
+      "id": "g-024",
+      "type": "named_entity",
+      "question": "What concerning behaviors or adverse clinical signs\u2014such as those linked to Warnings and Precautions section 5.1\u2014should be reported immediately to healthcare providers?",
+      "first_relevant_rank": null,
+      "top_hit": "ESOMEPRAZOLE SODIUM [9354958c] \u2014 information_for_patients"
+    },
+    {
+      "id": "g-025",
+      "type": "named_entity",
+      "question": "Upon what pharmacokinetic, safety, and clinical trial data (including studies of acyclovir in pediatric chickenpox) is the use of valacyclovir for treating chickenpox in pediatric patients aged 2 to less than 18 years established?",
+      "first_relevant_rank": 3,
+      "top_hit": "VALACYCLOVIR [b713ebfb] \u2014 pediatric_use"
+    },
+    {
+      "id": "g-026",
+      "type": "named_entity",
+      "question": "How can intracavernous injections of EDEX lead to increased peripheral blood levels of PGE1 and its metabolites\u2014particularly in patients with corpora cavernosa venous leakage\u2014and what systemic hemodynamic effects may result?",
+      "first_relevant_rank": 1,
+      "top_hit": "ALPROSTADIL [e8b8ec8d] \u2014 general_precautions"
+    },
+    {
+      "id": "g-027",
+      "type": "named_entity",
+      "question": "How do the incidences of ear, labyrinth, and eye disorders (such as vertigo, diplopia, and blurred vision) compare between placebo and various lacosamide dose tiers (200 mg, 400 mg, and 600 mg/day)?",
+      "first_relevant_rank": 5,
+      "top_hit": "LAMOTRIGINE ER [faccacb7] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-028",
+      "type": "named_entity",
+      "question": "Have any gender-related or race-specific pharmacokinetic differences or disposition effects been observed or formally studied for oxcarbazepine across children, adults, or the elderly?",
+      "first_relevant_rank": 1,
+      "top_hit": "OXCARBAZEPINE [4ebcb0e5] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "g-029",
+      "type": "paraphrase",
+      "question": "What are the cardiovascular contraindications for NSAIDs in the setting of coronary artery bypass graft (CABG) surgery?",
+      "first_relevant_rank": null,
+      "top_hit": "CELECOXIB [b0e0243e] \u2014 boxed_warning"
+    },
+    {
+      "id": "g-030",
+      "type": "paraphrase",
+      "question": "What were the no-effect levels and corresponding multiple of the maximum recommended human dose (MRHD on a mg/m",
+      "first_relevant_rank": null,
+      "top_hit": "LURASIDONE HYDROCHLORIDE [b848e6f3] \u2014 pediatric_use"
+    },
+    {
+      "id": "g-031",
+      "type": "paraphrase",
+      "question": "What are the combined rates of excellent and good intubating conditions and their associated 95% confidence intervals across the different dosing and anesthetic groups (cisatracurium besylate 0.15 mg/kg or 0.20 mg/kg with propofol or thiopental)?",
+      "first_relevant_rank": 5,
+      "top_hit": "CISATRACURIUM BESYLATE [291a55dd] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-032",
+      "type": "paraphrase",
+      "question": "For what primary clinical conditions\u2014including the management of anxiety disorders or the short-term relief of anxiety symptoms\u2014are buspirone hydrochloride tablets indicated, and how are everyday life stresses distinguished from conditions requiring treatment?",
+      "first_relevant_rank": 1,
+      "top_hit": "BUSPIRONE HYDROCHLORIDE [476f4f55] \u2014 indications_and_usage"
+    },
+    {
+      "id": "g-033",
+      "type": "paraphrase",
+      "question": "What is the recommended Day 1, Day 15, and maintenance (starting on Day 29) subcutaneous dosing schedule for pediatric patients weighing 40 kg (88 lbs) and greater?",
+      "first_relevant_rank": 1,
+      "top_hit": "ADALIMUMAB-AQVH [cd0e7af2] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-034",
+      "type": "paraphrase",
+      "question": "Which patient populations and clinical scenarios\u2014such as debilitated patients, those receiving CNS depressants, or patients undergoing upper airway procedures without an endotracheal tube\u2014exhibit an increased potential for adverse central nervous system effects?",
+      "first_relevant_rank": 1,
+      "top_hit": "MIDAZOLAM [575d8bf0] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-035",
+      "type": "paraphrase",
+      "question": "What clinical events\u2014including seizures, extrapyramidal reactions, and lethargy\u2014have been reported in association with metoclopramide overdoses, and is there a consistent pattern to these reports?",
+      "first_relevant_rank": 1,
+      "top_hit": "METOCLOPRAMIDE [94e5acdf] \u2014 overdosage"
+    }
+  ]
+}

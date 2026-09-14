@@ -33,7 +33,7 @@ import asyncio
 import json
 from pathlib import Path
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 
 from drug_label_rag.db.models import Chunk
 from drug_label_rag.db.session import dispose, session_scope
@@ -76,24 +76,34 @@ async def triage_one(session, row: dict, k: int) -> str:
         print(f"  FOUND at rank {rank} of {k}")
         verdict = f"found at {rank}"
     else:
-        # Sanity check: can the labelled passage be retrieved by its own words?
+        # Does the labelled text still exist in the corpus at all?
+        #
+        # This uses an EXACT text match, not meaning-search. The earlier version
+        # searched for the anchor with dense retrieval and demanded the exact
+        # chunk id back — but SPL labels duplicate content between the HIGHLIGHTS
+        # block and the full sections, so it frequently found the other copy and
+        # reported a non-existent index fault.
         anchor = row.get("anchor_text") or " ".join(target.content.split()[:12])
-        self_hits = await dense_search(session, anchor, k=10)
-        self_rank = next(
-            (i for i, h in enumerate(self_hits, 1) if h.chunk_id in target_ids), None
-        )
-        if self_rank is None:
-            print("  ⚠ The labelled passage is NOT retrievable even by its own text.")
-            print("    Something is wrong upstream — check embeddings and the index.")
-            verdict = "INDEX PROBLEM"
+        exists = (
+            await session.execute(
+                select(func.count())
+                .select_from(Chunk)
+                .where(Chunk.content.contains(anchor))
+            )
+        ).scalar_one()
+
+        if exists == 0:
+            print("  ⚠ The labelled text is not present anywhere in the corpus.")
+            print("    The label is stale — run scripts/resolve.py.")
+            verdict = "STALE LABEL"
         elif words > 22 or clauses >= 3:
             print(f"  MISS — question is {words} words, ~{clauses} clauses.")
             print("    A single embedding averaged across several clauses loses focus.")
             print("    Split it into one question per fact.")
             verdict = "bad question: too long"
         else:
-            print(f"  MISS — passage is findable (self-search rank {self_rank}),")
-            print("    so the question simply does not reach it. Genuine retrieval gap.")
+            print(f"  MISS — the text exists in {exists} chunk(s), so the passage is")
+            print("    there and the question simply does not reach it. Genuine gap.")
             verdict = "RETRIEVAL GAP"
 
     print(f"\n  LABELLED PASSAGE  ({target.generic_name} / {target.section}):")
@@ -133,8 +143,9 @@ async def run(only: str | None, k: int) -> None:
     print()
     for key, n in sorted(counts.items(), key=lambda kv: -kv[1]):
         print(f"  {n:>3}  {key}")
-    print("\nRETRIEVAL GAP  -> Phase 3 should fix these.")
-    print("bad question   -> rewrite or drop; they are not measuring retrieval.")
+    print("\nRETRIEVAL GAP  -> a real failure. Phase 3 should fix these.")
+    print("bad question   -> rewrite; they are measuring your phrasing, not retrieval.")
+    print("STALE LABEL    -> run scripts/resolve.py --apply.")
 
 
 def main(argv: list[str] | None = None) -> int:

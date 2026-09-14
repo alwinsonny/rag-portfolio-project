@@ -1,3 +1,11 @@
 .env
 /data/raw/drug-label-0001-of-0014.json.zip
 /data/raw/drug-label-0002-of-0014.json.zip
+**/__pycache__/
+__pycache__/
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*cpython-*.pyc

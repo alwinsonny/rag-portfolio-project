@@ -3,6 +3,14 @@
     python scripts/resolve.py --check     # report drift, change nothing
     python scripts/resolve.py --apply     # rewrite data/golden.jsonl
 
+ON MULTIPLE MATCHES:
+An anchor matching several chunks is normal, not an error. SPL labels repeat
+content between the HIGHLIGHTS summary and the full sections, so after
+section-aware chunking the same sentence exists in two places. Every chunk
+containing the answer is marked relevant. Discarding the extras would penalise
+the retriever for finding a correct passage in the copy you did not happen to
+label.
+
 THE PROBLEM THIS SOLVES:
 chunk_id is assigned at insert time. Phase 3 changes the chunking strategy,
 which means a re-ingest, which means every id is reassigned. Without this
@@ -116,10 +124,22 @@ async def resolve(apply: bool) -> None:
                 lost += 1
                 print(f"  LOST      [{row['id']}] {row['question'][:56]}")
             elif len(found) > 1:
+                # SPL labels repeat themselves: the HIGHLIGHTS block at the top
+                # duplicates sentences from the full sections below. After
+                # section-aware chunking those copies live in separate chunks,
+                # so the anchor legitimately matches more than one.
+                #
+                # KEEP THEM ALL. Picking one arbitrarily and discarding the
+                # rest marks a correct retrieval as wrong — the same unjudged
+                # relevant document problem that produced the false 0.400
+                # baseline. If two chunks both contain the answer, both are
+                # relevant, and the metrics are built to handle that.
                 ambiguous += 1
-                print(f"  AMBIGUOUS [{row['id']}] {len(found)} candidates: {found}")
+                print(f"  MULTI     [{row['id']}] anchor in {len(found)} chunks: {found}")
                 if apply:
-                    row["relevant"] = [{"chunk_id": found[0], "grade": 2}]
+                    row["relevant"] = [
+                        {"chunk_id": cid, "grade": 2} for cid in found
+                    ]
             else:
                 moved += 1
                 if apply:
@@ -130,7 +150,7 @@ async def resolve(apply: bool) -> None:
     print(f"corpus holds {total_chunks} chunks")
     print(f"  {ok:>4} unchanged")
     print(f"  {moved:>4} re-pointed to a new chunk")
-    print(f"  {ambiguous:>4} ambiguous (anchor matched several chunks)")
+    print(f"  {ambiguous:>4} anchor found in several chunks — ALL kept as relevant")
     print(f"  {lost:>4} lost (anchor not found — relabel these)")
     if no_anchor:
         print(f"  {no_anchor:>4} have no anchor_text and cannot be re-resolved")

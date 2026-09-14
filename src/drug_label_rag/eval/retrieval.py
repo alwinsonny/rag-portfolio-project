@@ -2,9 +2,11 @@
 
 PHASE 1 onward. This is the tool you will run dozens of times.
 
-    python -m drug_label_rag.eval.retrieval
-    python -m drug_label_rag.eval.retrieval --label "baseline: fixed chunks, dense only"
-    python -m drug_label_rag.eval.retrieval --compare
+    python -m drug_label_rag.eval.retrieval                      # hybrid (both arms)
+    python -m drug_label_rag.eval.retrieval --dense-only
+    python -m drug_label_rag.eval.retrieval --lexical-only
+    python -m drug_label_rag.eval.retrieval --rerank             # hybrid + cross-encoder
+    python -m drug_label_rag.eval.retrieval --compare            # every past run
 
 EVERY RUN WRITES A TIMESTAMPED RESULTS FILE recording the FULL configuration
 alongside the metrics — chunk strategy, size, overlap, enrichment, embedding
@@ -32,7 +34,7 @@ from pydantic import BaseModel, Field
 
 from drug_label_rag.db.session import dispose, session_scope
 from drug_label_rag.eval.metrics import evaluate, evaluate_by_group
-from drug_label_rag.retrieval.dense import dense_search
+from drug_label_rag.retrieval.pipeline import retrieve
 from drug_label_rag.settings import settings
 
 GOLDEN = Path("data/golden.jsonl")
@@ -73,7 +75,9 @@ def load_golden(path: Path = GOLDEN) -> list[GoldenQuestion]:
         return [GoldenQuestion.model_validate_json(line) for line in fh if line.strip()]
 
 
-def config_snapshot() -> dict[str, Any]:
+def config_snapshot(
+    retrievers: list[str] | None = None, reranked: bool = False
+) -> dict[str, Any]:
     """Everything that could change a number. If it is not here, an old result
     file is uninterpretable."""
     return {
@@ -83,21 +87,56 @@ def config_snapshot() -> dict[str, Any]:
         "enriched": settings.enrich_with_parent_context,
         "embedding_model": settings.embedding_model,
         "dense_candidates": settings.dense_candidates,
-        "retrievers": ["dense"],  # Phase 3 adds "bm25" and "rrf"
-        "reranker": None,  # Phase 4 fills this in
+        "retrievers": retrievers or ["dense"],
+        "rrf_k": settings.rrf_k if retrievers and len(retrievers) > 1 else None,
+        "reranker": settings.reranker_model if reranked else None,
+        "rerank_top_n": settings.rerank_top_n if reranked else None,
     }
 
 
 async def run_evaluation(
-    questions: list[GoldenQuestion], k: int = 50
-) -> tuple[list[tuple[str, list[int], dict[int, int]]], list[dict[str, Any]]]:
-    """Retrieve for every question. Returns (runs_for_metrics, per_question_detail)."""
+    questions: list[GoldenQuestion],
+    k: int = 50,
+    *,
+    use_dense: bool = True,
+    use_lexical: bool = True,
+    use_rerank: bool = False,
+) -> tuple[
+    list[tuple[str, list[int], dict[int, int]]],
+    list[dict[str, Any]],
+    dict[str, int],
+    dict[str, float],
+]:
+    """Retrieve for every question.
+
+    Returns (runs_for_metrics, per_question_detail, arm_contributions).
+
+    The contributions figure answers a question the metrics cannot: how many of
+    the fused top ten each retriever actually supplied. If the lexical arm never
+    contributes, it is not earning its latency and you should say so rather than
+    keeping it because "hybrid" sounds better.
+    """
     runs: list[tuple[str, list[int], dict[int, int]]] = []
     detail: list[dict[str, Any]] = []
+    totals: dict[str, int] = {}
+    latency: dict[str, float] = {"retrieval_ms": 0.0, "rerank_ms": 0.0}
 
     async with session_scope() as session:
         for question in questions:
-            hits = await dense_search(session, question.question, k=k)
+            result = await retrieve(
+                session,
+                question.question,
+                k=k,
+                use_dense=use_dense,
+                use_lexical=use_lexical,
+                use_rerank=use_rerank,
+                top_n=k,  # rerank everything, so recall@50 stays measurable
+            )
+            hits = result.hits
+            for key in latency:
+                latency[key] += result.timings_ms.get(key, 0.0)
+            for arm, count in result.contributions.items():
+                totals[arm] = totals.get(arm, 0) + count
             retrieved = [h.chunk_id for h in hits]
             judgements = {r.chunk_id: r.grade for r in question.relevant}
             runs.append((question.type, retrieved, judgements))
@@ -114,7 +153,10 @@ async def run_evaluation(
                     "top_hit": hits[0].citation if hits else None,
                 }
             )
-    return runs, detail
+    if questions:
+        for key in latency:
+            latency[key] = round(latency[key] / len(questions), 1)
+    return runs, detail, totals, latency
 
 
 def write_results(
@@ -123,6 +165,10 @@ def write_results(
     by_type: dict[str, dict[str, float]],
     detail: list[dict[str, Any]],
     n_questions: int,
+    retrievers: list[str],
+    contributions: dict[str, int],
+    reranked: bool,
+    latency: dict[str, float],
 ) -> Path:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(UTC).strftime("%Y%m%d-%H%M%S")
@@ -133,7 +179,9 @@ def write_results(
                 "label": label,
                 "timestamp": stamp,
                 "questions": n_questions,
-                "config": config_snapshot(),
+                "config": config_snapshot(retrievers, reranked),
+                "arm_contributions": contributions,
+                "mean_latency_ms": latency,
                 "metrics": metrics,
                 "by_type": by_type,
                 "per_question": detail,
@@ -146,16 +194,31 @@ def write_results(
 
 
 def print_report(
-    label: str, metrics: dict[str, float], by_type: dict[str, dict[str, float]], n: int
+    label: str,
+    metrics: dict[str, float],
+    by_type: dict[str, dict[str, float]],
+    n: int,
+    retrievers: list[str],
+    contributions: dict[str, int],
+    reranked: bool,
+    latency: dict[str, float],
 ) -> None:
     print()
     print("=" * 68)
     print(f"{label}   ({n} questions)")
     print("=" * 68)
-    cfg = config_snapshot()
+    cfg = config_snapshot(retrievers, reranked)
     print(f"  {cfg['chunk_strategy']} chunks, size {cfg['chunk_size']}, "
           f"overlap {cfg['chunk_overlap']}, enriched={cfg['enriched']}")
-    print(f"  retrievers: {', '.join(cfg['retrievers'])}")
+    print(f"  retrievers: {', '.join(cfg['retrievers'])}"
+          + (f"   (RRF k={cfg['rrf_k']})" if cfg["rrf_k"] else "")
+          + ("   + cross-encoder rerank" if reranked else ""))
+    # Reranking buys accuracy with milliseconds. Report both sides.
+    print(f"  mean latency per question: retrieval {latency['retrieval_ms']} ms"
+          + (f", rerank {latency['rerank_ms']} ms" if reranked else ""))
+    if len(retrievers) > 1 and contributions:
+        share = "  ".join(f"{a}: {c}" for a, c in sorted(contributions.items()))
+        print(f"  top-10 slots supplied by each arm, summed over all questions: {share}")
     print()
     for k in (1, 5, 10, 20, 50):
         if f"recall@{k}" in metrics:
@@ -182,7 +245,8 @@ def compare() -> None:
         m, c = data["metrics"], data["config"]
         cfg = (f"{c['chunk_strategy']}/{c['chunk_size']}"
                f"{'/enriched' if c['enriched'] else ''} "
-               f"[{'+'.join(c['retrievers'])}]")
+               f"[{'+'.join(c.get('retrievers', ['dense']))}]"
+               f"{'+rerank' if c.get('reranker') else ''}")
         print(f"{data['label'][:44]:<44} {m.get('recall@10', 0):>6.3f} "
               f"{m.get('mrr@10', 0):>6.3f} {m.get('ndcg@10', 0):>6.3f}  {cfg}")
 
@@ -193,27 +257,48 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--suite", default=str(GOLDEN))
     parser.add_argument("-k", type=int, default=50, help="Candidates to retrieve")
     parser.add_argument("--compare", action="store_true", help="Show all past runs")
+    parser.add_argument("--dense-only", action="store_true", help="Meaning search alone")
+    parser.add_argument("--lexical-only", action="store_true", help="Word search alone")
+    parser.add_argument("--rerank", action="store_true", help="Add the cross-encoder")
     args = parser.parse_args(argv)
+
+    if args.dense_only and args.lexical_only:
+        parser.error("pick one, or neither for hybrid")
 
     if args.compare:
         compare()
         return 0
 
     questions = load_golden(Path(args.suite))
+    use_dense = not args.lexical_only
+    use_lexical = not args.dense_only
+    retrievers = [n for n, on in (("dense", use_dense), ("lexical", use_lexical)) if on]
+
     label = args.label or (
-        f"{settings.chunk_strategy} chunks, dense only"
+        f"{settings.chunk_strategy} {settings.chunk_size}"
         + (", enriched" if settings.enrich_with_parent_context else "")
+        + f", {'+'.join(retrievers)}"
+        + (" + rerank" if args.rerank else "")
     )
 
     async def _main() -> None:
         try:
-            runs, detail = await run_evaluation(questions, k=args.k)
+            runs, detail, contributions, latency = await run_evaluation(
+                questions,
+                k=args.k,
+                use_dense=use_dense,
+                use_lexical=use_lexical,
+                use_rerank=args.rerank,
+            )
         finally:
             await dispose()
 
         metrics = evaluate([(r, j) for _, r, j in runs])
         by_type = evaluate_by_group(runs, k=10)
-        print_report(label, metrics, by_type, len(questions))
+        print_report(
+            label, metrics, by_type, len(questions), retrievers, contributions,
+            args.rerank, latency,
+        )
 
         missed = [d for d in detail if d["first_relevant_rank"] is None]
         if missed:
@@ -222,7 +307,10 @@ def main(argv: list[str] | None = None) -> int:
             for d in missed[:8]:
                 print(f"  [{d['id']}] {d['question'][:70]}")
 
-        path = write_results(label, metrics, by_type, detail, len(questions))
+        path = write_results(
+            label, metrics, by_type, detail, len(questions), retrievers,
+            contributions, args.rerank, latency,
+        )
         print(f"\nwritten to {path}")
 
     asyncio.run(_main())

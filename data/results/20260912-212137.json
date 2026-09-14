@@ -1,0 +1,303 @@
+{
+  "label": "section 1000, ENRICHED, dense only",
+  "timestamp": "20260912-212137",
+  "questions": 35,
+  "config": {
+    "chunk_strategy": "section",
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "enriched": true,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_candidates": 50,
+    "retrievers": [
+      "dense"
+    ],
+    "reranker": null
+  },
+  "metrics": {
+    "recall@1": 0.07142857142857142,
+    "mrr@1": 0.08571428571428572,
+    "ndcg@1": 0.08571428571428572,
+    "recall@5": 0.2571428571428571,
+    "mrr@5": 0.15238095238095237,
+    "ndcg@5": 0.1786897821960331,
+    "recall@10": 0.3142857142857143,
+    "mrr@10": 0.16,
+    "ndcg@10": 0.19712612543677338,
+    "recall@20": 0.4,
+    "mrr@20": 0.16547201336675021,
+    "ndcg@20": 0.22124972601571372,
+    "recall@50": 0.4,
+    "mrr@50": 0.16547201336675021,
+    "ndcg@50": 0.22124972601571372
+  },
+  "by_type": {
+    "direct_lookup": {
+      "recall@10": 0.25,
+      "mrr@10": 0.14250000000000002,
+      "ndcg@10": 0.16753355689813693
+    },
+    "named_entity": {
+      "recall@10": 0.375,
+      "mrr@10": 0.125,
+      "ndcg@10": 0.18589211758493496
+    },
+    "paraphrase": {
+      "recall@10": 0.42857142857142855,
+      "mrr@10": 0.25,
+      "ndcg@10": 0.29451518737783583
+    },
+    "ALL": {
+      "recall@10": 0.3142857142857143,
+      "mrr@10": 0.16,
+      "ndcg@10": 0.19712612543677338
+    }
+  },
+  "per_question": [
+    {
+      "id": "g-001",
+      "type": "direct_lookup",
+      "question": "What are the indications and iodine concentrations for intra-arterial procedures?",
+      "first_relevant_rank": 10,
+      "top_hit": "IODIXANOL [0fe89ea2] \u2014 indications_and_usage"
+    },
+    {
+      "id": "g-002",
+      "type": "direct_lookup",
+      "question": "What are the common clinical signs of an NSAID overdose, and are they reversible?",
+      "first_relevant_rank": 4,
+      "top_hit": "NABUMETONE [da34003b] \u2014 overdosage"
+    },
+    {
+      "id": "g-003",
+      "type": "direct_lookup",
+      "question": "What are the guidelines for repeat pregnancy testing in amenorrheic women?",
+      "first_relevant_rank": 1,
+      "top_hit": "LEVONORGESTREL [dcbd6aa2] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-004",
+      "type": "direct_lookup",
+      "question": "What ophthalmologic abnormalities are reported in quinolone therapy, and is causality established?",
+      "first_relevant_rank": null,
+      "top_hit": "LEVOFLOXACIN [cbd5153f] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-005",
+      "type": "direct_lookup",
+      "question": "How did dosing period limitations affect reproductive toxicity assessments in offspring?",
+      "first_relevant_rank": null,
+      "top_hit": "HYDROMORPHONE HYDROCHLORIDE [c729424e] \u2014 nursing_mothers"
+    },
+    {
+      "id": "g-006",
+      "type": "direct_lookup",
+      "question": "What fetal developmental effects were observed in relation to animal exposure levels?",
+      "first_relevant_rank": null,
+      "top_hit": "ENTACAPONE [d9cc1327] \u2014 pregnancy"
+    },
+    {
+      "id": "g-007",
+      "type": "direct_lookup",
+      "question": "What are the clinical outcomes of fatal buspirone overdoses alone versus multi-drug ingestions?",
+      "first_relevant_rank": 2,
+      "top_hit": "BUSPIRONE HYDROCHLORIDE [476f4f55] \u2014 overdosage"
+    },
+    {
+      "id": "g-008",
+      "type": "direct_lookup",
+      "question": "What are the approved combination regimens for treating H. pylori duodenal ulcers?",
+      "first_relevant_rank": null,
+      "top_hit": "LANSOPRAZOLE [dee80a19] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-009",
+      "type": "direct_lookup",
+      "question": "What safety monitoring and adverse reactions are associated with a lacosamide loading dose?",
+      "first_relevant_rank": 1,
+      "top_hit": "LACOSAMIDE [7ed5cebe] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-010",
+      "type": "direct_lookup",
+      "question": "What route-specific doses and exposure multiples were evaluated in teratogenicity studies?",
+      "first_relevant_rank": null,
+      "top_hit": "TETRAKIS(2-METHOXYISOBUTYLISOCYANIDE)COPPER(I) TETRAFLUOROBORATE [49662def] \u2014 use_in_specific_populations"
+    },
+    {
+      "id": "g-011",
+      "type": "direct_lookup",
+      "question": "What are the specific incidence rates for gastrointestinal adverse events across treatment arms?",
+      "first_relevant_rank": null,
+      "top_hit": "LORAZEPAM [7dda070d] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-012",
+      "type": "direct_lookup",
+      "question": "What cardiac effects and symptoms are linked to lapatinib therapy?",
+      "first_relevant_rank": null,
+      "top_hit": "LAPATINIB [302a4346] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-013",
+      "type": "direct_lookup",
+      "question": "What are the infection risks during pregnancy, and what preventive methods should be considered?",
+      "first_relevant_rank": null,
+      "top_hit": "CIPROFLOXACIN HYDROCHLORIDE [d17b0e87] \u2014 use_in_specific_populations"
+    },
+    {
+      "id": "g-014",
+      "type": "direct_lookup",
+      "question": "What are meperidine's primary therapeutic actions and its similarities to morphine?",
+      "first_relevant_rank": null,
+      "top_hit": "MEPERIDINE HYDROCHLORIDE [e0e998da] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-015",
+      "type": "direct_lookup",
+      "question": "What monitoring requirements exist for long-term inhaled corticosteroid use?",
+      "first_relevant_rank": null,
+      "top_hit": "FLUTICASONE PROPIONATE AND SALMETEROL XINAFOATE [80b36523] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-016",
+      "type": "direct_lookup",
+      "question": "What bacteriological eradication rates were achieved for key pathogens in clinical studies?",
+      "first_relevant_rank": null,
+      "top_hit": "LEVOFLOXACIN [cbd5153f] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-017",
+      "type": "direct_lookup",
+      "question": "What hydrolysis product and pharmacologically active species form when arsenic trioxide dissolves?",
+      "first_relevant_rank": null,
+      "top_hit": "DICLOFENAC SODIUM AND MISOPROSTOL [600fe842] \u2014 description"
+    },
+    {
+      "id": "g-018",
+      "type": "direct_lookup",
+      "question": "What were the continuous abstinence rates for varenicline versus comparators in both cohorts?",
+      "first_relevant_rank": 19,
+      "top_hit": "VARENICLINE [59e125e3] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-019",
+      "type": "direct_lookup",
+      "question": "What inclusion and evaluation criteria were established for the clinical studies?",
+      "first_relevant_rank": null,
+      "top_hit": "GEMCITABINE [d80176fe] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-020",
+      "type": "direct_lookup",
+      "question": "When should healthcare providers evaluate potential drug interactions for this regimen?",
+      "first_relevant_rank": null,
+      "top_hit": "ARIPIPRAZOLE [d8183eaf] \u2014 drug_interactions"
+    },
+    {
+      "id": "g-021",
+      "type": "named_entity",
+      "question": "What was the MIC of ciprofloxacin for the specific Y. pestis test strain?",
+      "first_relevant_rank": 6,
+      "top_hit": "CIPROFLOXACIN HYDROCHLORIDE [d17b0e87] \u2014 clinical_pharmacology"
+    },
+    {
+      "id": "g-022",
+      "type": "named_entity",
+      "question": "How does long-term NSAID administration lead to renal injuries like papillary necrosis?",
+      "first_relevant_rank": 3,
+      "top_hit": "IBUPROFEN [214e3b3e] \u2014 warnings"
+    },
+    {
+      "id": "g-023",
+      "type": "named_entity",
+      "question": "Why can adverse reaction rates from different drug trials not be directly compared?",
+      "first_relevant_rank": null,
+      "top_hit": "PAROXETINE [7d558598] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-024",
+      "type": "named_entity",
+      "question": "What clinical studies support the use of daptomycin in adults and pediatric patients?",
+      "first_relevant_rank": 12,
+      "top_hit": "DAPTOMYCIN [6ec53f7e] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-025",
+      "type": "named_entity",
+      "question": "What strategy is recommended when discontinuing venlafaxine to minimize withdrawal symptoms?",
+      "first_relevant_rank": 18,
+      "top_hit": "VENLAFAXINE [470ad045] \u2014 dosage_and_administration"
+    },
+    {
+      "id": "g-026",
+      "type": "named_entity",
+      "question": "How are TIMI Major, Fatal, and Minor bleeding events formally defined?",
+      "first_relevant_rank": 2,
+      "top_hit": "TICAGRELOR [557351f1] \u2014 adverse_reactions"
+    },
+    {
+      "id": "g-027",
+      "type": "named_entity",
+      "question": "What storage temperature ranges and USP conditions are specified for product stability?",
+      "first_relevant_rank": null,
+      "top_hit": "METFORMIN [33ecddbe] \u2014 how_supplied"
+    },
+    {
+      "id": "g-028",
+      "type": "named_entity",
+      "question": "How do local tumor products stimulate osteoclast bone resorption to cause hypercalcemia?",
+      "first_relevant_rank": null,
+      "top_hit": "ZOLEDRONIC ACID [3885488c] \u2014 pharmacodynamics"
+    },
+    {
+      "id": "g-029",
+      "type": "paraphrase",
+      "question": "What clinical risk is associated with using bupropion XL alongside MAOIs?",
+      "first_relevant_rank": 2,
+      "top_hit": "BUPROPION [47ceb7e1] \u2014 contraindications"
+    },
+    {
+      "id": "g-030",
+      "type": "paraphrase",
+      "question": "Why is subtherapeutic dosing or monotherapy for HIV-1 treatment considered inappropriate?",
+      "first_relevant_rank": null,
+      "top_hit": "ABACAVIR [0d791375] \u2014 clinical_studies"
+    },
+    {
+      "id": "g-031",
+      "type": "paraphrase",
+      "question": "What are the temperature limits and expiration window for storing reconstituted solutions?",
+      "first_relevant_rank": null,
+      "top_hit": "ARFORMOTEROL TARTRATE [6838a595] \u2014 how_supplied"
+    },
+    {
+      "id": "g-032",
+      "type": "paraphrase",
+      "question": "What pregnancy notification and registry enrollment guidance should be given to patients?",
+      "first_relevant_rank": null,
+      "top_hit": "ISOTRETINOIN [27b3cf26] \u2014 precautions"
+    },
+    {
+      "id": "g-033",
+      "type": "paraphrase",
+      "question": "What instructions should patients receive regarding unexplained muscle symptoms during statin therapy?",
+      "first_relevant_rank": null,
+      "top_hit": "ROSUVASTATIN [11701a6e] \u2014 warnings_and_cautions"
+    },
+    {
+      "id": "g-034",
+      "type": "paraphrase",
+      "question": "What percentage of a radiolabeled fenofibrate dose is recovered in urine versus feces?",
+      "first_relevant_rank": 1,
+      "top_hit": "FENOFIBRATE [d9be3ae3] \u2014 pharmacokinetics"
+    },
+    {
+      "id": "g-035",
+      "type": "paraphrase",
+      "question": "What visual color changes may occur in linezolid injection, and do they affect potency?",
+      "first_relevant_rank": 4,
+      "top_hit": "VORICONAZOLE [9ec6eda2] \u2014 warnings_and_cautions"
+    }
+  ]
+}
